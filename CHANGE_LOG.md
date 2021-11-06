@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2018-0330: 0.1.15.2 (LinuxGuruGamer) for KSP 1.4.1
+	+ Fixed version file
 * 2018-0330: 0.1.15.1 (LinuxGuruGamer) for KSP 1.4.1
 	+ Updated for 1.4.1
 	+ Added Jenkins config
