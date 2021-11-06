@@ -24,7 +24,6 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-#if false
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -98,7 +97,7 @@ namespace VanguardTechnologies
 
         public override void OnStart(PartModule.StartState state)
         {
-            Log.Info("OnStart");
+            Log.trace("OnStart");
 
             Events["ExtendAnimation"].guiName = extendGUI;
             Events["RetractAnimation"].guiName = retractGUI;
@@ -123,7 +122,7 @@ namespace VanguardTechnologies
                 animState.normalizedTime = Convert.ToSingle(state);
             }
 
-            Log.Info("loading part manipulation");
+            Log.trace("loading part manipulation");
 
             string[] split = partManipulationConfigs.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string file in split)
@@ -134,7 +133,7 @@ namespace VanguardTechnologies
             }
             applyManipulation = true;
 
-            Log.Info("End of OnStart");
+            Log.trace("End of OnStart");
         }
 
         public void Update()
@@ -208,4 +207,3 @@ namespace VanguardTechnologies
         }
     }
 }
-#endif

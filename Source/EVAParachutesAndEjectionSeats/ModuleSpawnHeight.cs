@@ -25,12 +25,8 @@
 
 */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
-#if false
 namespace VanguardTechnologies
 {
     class ModuleKrSpawnHeight : PartModule
@@ -40,9 +36,9 @@ namespace VanguardTechnologies
 
         public void OnPutToGround(PartHeightQuery q)
         {
-            Log.Info(q.lowestPoint.ToString());
+            Log.dbg("OnPutToGround {0}", q.lowestPoint);
             q.lowestPoint = -height;
-            Log.Info(q.lowestPoint.ToString());
+            Log.dbg("OnPutToGround {0}", q.lowestPoint);
         }
 
         public override void OnStart(PartModule.StartState state)
@@ -57,7 +53,7 @@ namespace VanguardTechnologies
             if (vessel.HoldPhysics)
             {
                 Invoke("SetOrbit", 1);
-                Log.Info("fail");
+                Log.trace("fail");
                 return;
             }
             vessel.Landed = false;
@@ -65,8 +61,7 @@ namespace VanguardTechnologies
             double v = Math.Sqrt(vessel.mainBody.gravParameter / (vessel.mainBody.Radius + vessel.orbit.altitude));
             vessel.orbit.vel = Vector3.Cross(vessel.orbit.pos, new Vector3(0, 0, -1)).normalized * (float)v;
             vessel.GoOffRails();
-            Log.Info("success");
+            Log.dbg("success");
         }
     }
 }
-#endif

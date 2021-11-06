@@ -24,13 +24,8 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
-#if false
 namespace VanguardTechnologies
 {
     class InternalKrCustomHelmet : InternalModule
@@ -55,7 +50,7 @@ namespace VanguardTechnologies
                     helmet.transform.parent = k.transform.Find(transformPath);
                     if (debugTransformPath)
                         CheckTheF___ingTransforms(k.transform, transformPath);
-                    Log.Info(helmet.transform.parent.ToString());
+                    Log.dbg("{0}", helmet.transform.parent);
                     helmet.transform.localPosition = localPosition;
                     helmet.transform.localScale = scale;
                     helmet.transform.localRotation = Quaternion.Euler(localRotation);
@@ -66,15 +61,14 @@ namespace VanguardTechnologies
         {
             foreach (Transform c in t)
             {
-                Log.Info(c.name);
+                Log.dbg("{0}", c.name);
                 if (path.StartsWith(c.name))
                 {
                     CheckTheF___ingTransforms(c, path.Remove(0, path.IndexOf('/') + 1));
                     return;
                 }
             }
-            Log.Info("---END OF TRANSFORM CHECK---");
+            Log.dbg("---END OF TRANSFORM CHECK---");
         }
     }
 }
-#endif

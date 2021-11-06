@@ -35,4 +35,4 @@ using System.Runtime.InteropServices;
 //[assembly: AssemblyVersion("1.0.0.7")]
 [assembly: AssemblyVersion(VanguardTechnologies.Version.Number)]
 [assembly: AssemblyFileVersion(VanguardTechnologies.Version.Number)]
-[assembly: KSPAssembly("EVAParachutesAndEjectionSeats", VanguardTechnologies.Version.major, VanguardTechnologies.Version.minor)]
+[assembly: KSPAssembly("VanguardTechnologies", VanguardTechnologies.Version.major, VanguardTechnologies.Version.minor)]

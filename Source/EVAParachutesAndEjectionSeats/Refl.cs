@@ -26,7 +26,6 @@
 */
 using System;
 using System.Reflection;
-using UnityEngine;
 
 namespace VanguardTechnologies
 {
@@ -52,7 +51,6 @@ namespace VanguardTechnologies
             GetField(obj, fieldNum).SetValue(obj, value);
         }
 
-#if false
 		public static FieldInfo GetField(object obj, string name) {
 			var f = obj.GetType().GetField(name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 			if(f == null) throw new Exception("No such field: " + obj.GetType() + "#" + name);
@@ -64,11 +62,9 @@ namespace VanguardTechnologies
 		public static void SetValue(object obj, string name, object value) {
 			GetField(obj, name).SetValue(obj, value);
 		}
-#endif
 
         public static MethodInfo GetMethod(object obj, int methodnum)
         {
-
             MethodInfo[] m = obj.GetType().GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
             int c = 0;
             foreach (MethodInfo FI in m)
@@ -85,7 +81,6 @@ namespace VanguardTechnologies
             return GetMethod(obj, methodnum).Invoke(obj, args);
         }
 
-#if false
 		public static MethodInfo GetMethod(object obj, string name) {
 			var m = obj.GetType().GetMethod(name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 			if(m == null) throw new Exception("No such method: " + obj.GetType() + "#" + name);
@@ -94,7 +89,5 @@ namespace VanguardTechnologies
 		public static object Invoke(object obj, string name, params object[] args) {
 			return GetMethod(obj, name).Invoke(obj, args);
 		}
-#endif
-
     }
 }

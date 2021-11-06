@@ -27,9 +27,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
-#if false
+
 namespace VanguardTechnologies
 {
     public class ModuleKrLightColor : PartModule
@@ -45,10 +44,10 @@ namespace VanguardTechnologies
         public override void OnStart(PartModule.StartState state)
         {
             lights = part.FindModelComponents<Light>(lightName).ToList();
-            Log.Info("[" + GetType().Name + "] Lights found: " + lights.Count);
+            Log.detail("[{0}] Lights found: {1}", GetType().Name, lights.Count);
 
             emissives = part.FindModelComponents<Renderer>(emissiveName).ToList();
-            Log.Info("[" + GetType().Name + "] Emissives found: " + emissives.Count);
+            Log.detail("[{0}] Emissives found: {1}", GetType().Name, emissives.Count);
         }
 
         public override void OnLoad(ConfigNode node)
@@ -62,8 +61,8 @@ namespace VanguardTechnologies
             catch (Exception e)
             {
                 win.color = new Color(1, 1, 1, 1);
-                Debug.LogError("[" + GetType().Name + "] FAILED TO LOAD COLOUR");
-                Log.Info(e.ToString());
+                Log.error("[{0}] FAILED TO LOAD COLOUR", GetType().Name);
+                Log.ex(this,e);
             }
         }
 
@@ -100,4 +99,3 @@ namespace VanguardTechnologies
         public void OnDestroy() { Destroy(_win); }
     }
 }
-#endif

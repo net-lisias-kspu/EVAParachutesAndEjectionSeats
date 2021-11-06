@@ -24,12 +24,7 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-#if false
 namespace VanguardTechnologies
 {
     public class ModuleKrIcon : PartModule
@@ -69,4 +64,3 @@ namespace VanguardTechnologies
         }
     }
 }
-#endif

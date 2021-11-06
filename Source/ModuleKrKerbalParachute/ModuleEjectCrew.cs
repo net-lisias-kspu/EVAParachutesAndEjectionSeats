@@ -24,10 +24,6 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace VanguardTechnologies
@@ -85,7 +81,7 @@ namespace VanguardTechnologies
 
         public void SetVessel(Vessel v)
         {
-            Log.Info("vessel abort: " + v.name);
+            Log.trace("vessel abort: {0}", v.name);
             vessel = v;
             lastTime = 0.0;
         }
@@ -98,14 +94,14 @@ namespace VanguardTechnologies
                 if (m.moduleName == "ModuleKrEjectPilot")
                 {
                     mkep = (ModuleKrEjectPilot)m;
-                    Log.Info("EjectorFound on command pod");
+                    Log.detail("EjectorFound on command pod");
                     if (mkep.maxUses > 0)
                     {
                         //ejectorFound = true;
                         mkep.maxUses--;
                         ejectionForce = mkep.ejectionForce;
                         forceCnt = 60;
-                        Log.Info("Max uses: " + mkep.maxUses.ToString() + "   EjectionForce: " + ejectionForce.ToString());
+                        Log.detail("Max uses: {0}   EjectionForce: {1}", mkep.maxUses, ejectionForce);
                         return true;
                     }
 
@@ -127,10 +123,10 @@ namespace VanguardTechnologies
             ModuleKrEjectPilot mkep = null;
             foreach (Part p in vessel.parts)
             {
-                Log.Info("part: " + p.partInfo.title);
+                Log.dbg("part: {0}", p.partInfo);
                 if (p.protoModuleCrew.Count == 0)
                 {
-                    Log.Info("nobody inside");
+                    Log.detail("nobody inside");
                     continue;
                 }
                 bool ejectorFound = false;
@@ -191,13 +187,13 @@ namespace VanguardTechnologies
 #endif
                     if (!ejectorFound)
                     {
-                        Log.Info("Ejector Not found on command pod");
+                        Log.warn("Ejector Not found on command pod");
                         continue;
                     }
                 }
 
                 // Look through all the available crew until we find one which can be ejected
-                Log.Info("look for kerbal to eject");
+                Log.trace("look for kerbal to eject");
                 foreach (ProtoCrewMember kerbal in p.protoModuleCrew)
                 {
                     KerbalEVA spawned = FlightEVA.fetch.spawnEVA(kerbal, p, p.airlock, true);
@@ -205,7 +201,7 @@ namespace VanguardTechnologies
                     {
                         // if false, then the exit was blocked by something
                         allSpawned = false;
-                        Log.Info("notSpawned");
+                        Log.trace("notSpawned");
                     }
                     else
                     {
@@ -217,7 +213,7 @@ namespace VanguardTechnologies
                         {
                             if (kerbal.name == FlightGlobals.Vessels[i].vesselName)
                             {
-                                Log.Info("DoEjections.Update, adding parachute to " + kerbal.name);
+                                Log.detail("DoEjections.Update, adding parachute to {0}", kerbal.name);
                                 bool b = true;
                                 foreach (Part prt in FlightGlobals.Vessels[i].parts)
                                 {
@@ -241,12 +237,12 @@ namespace VanguardTechnologies
                                 mkkp.semiDeployedFraction = mkep.semiDeployedFraction;
                                 mkkp.deployTime = mkep.deployTime;
                                 mkkp.deployHeight = mkep.deployHeight;
-                                Log.Info("Update.deployHeight: " + mkep.deployHeight.ToString());
+                                Log.trace("Update.deployHeight: {0}", mkep.deployHeight);
                                 mkkp.deployed = true;
 
                                 //mkkp.rigidbody = this.
 
-                                Log.Info("mkep.selectedChute: " + mkep.selectedChute.ToString());
+                                Log.trace("mkep.selectedChute: {0}", mkep.selectedChute);
                                 if (mkep.selectedChute >= 0 && mkep.selectedChute < mkep.arrChuteDir.Length)
                                     mkkp.chuteDir = mkep.arrChuteDir[mkep.selectedChute];
 
@@ -302,11 +298,11 @@ namespace VanguardTechnologies
 
             if (ejectedKerbal != null)
             {
-                Log.Info("DoEjections.FixedUpdate");
+                Log.dbg("DoEjections.FixedUpdate");
                 KerbalEVA kEVA = ejectedKerbal.GetComponentInChildren<KerbalEVA>();
                 if (kEVA != null)
                 {
-                    Log.Info("KerbalEVA Found, name: " + this.vessel.name);
+                    Log.dbg("KerbalEVA Found, name: {0}", this.vessel.name);
                     if (kEVA.Ready)
                     {
 #if true
@@ -404,7 +400,7 @@ namespace VanguardTechnologies
         {
             ejecting = true; // param.type == KSPActionType.Activate;
             part.SendEvent("OnDeboardSeat");
-            Log.Info("Eject Crew");
+            Log.trace("Eject Crew");
         }
 
 
@@ -419,7 +415,7 @@ namespace VanguardTechnologies
 
         private void SetupGUI()
         {
-            Log.Info("SetupGUI");
+            Log.trace("SetupGUI");
             //Update the gui
             chooseChute = Fields[nameof(ChooseOption)];
             chooseChute.guiName = "Chute";     //Dummy name until updated
@@ -443,9 +439,9 @@ namespace VanguardTechnologies
         //onFieldChanged action
         private void selectChute(BaseField field, object oldValueObj)
         {
-            Log.Info("selectChute");
+            Log.trace("selectChute");
             selectedChute = int.Parse(ChooseOption);
-            Log.Info("selectedChute: " + selectedChute.ToString());
+            Log.trace("selectedChute: {0}", selectedChute);
             // updateIntake(true);
         }
 
@@ -453,7 +449,7 @@ namespace VanguardTechnologies
         int getNumSeats()
         {
             int cnt;
-            Log.Info("getNumSeats");
+            Log.trace("getNumSeats");
             if (HighLogic.LoadedSceneIsEditor && this.part.parent == null)
             {
                 cnt = maxUses;
@@ -473,7 +469,7 @@ namespace VanguardTechnologies
 
                 cnt = System.Math.Min(crewCapacity, maxUses);
             }
-            Log.Info("Ejector Cnt: " + cnt.ToString());
+            Log.trace("Ejector Cnt: {0}", cnt);
             return cnt;
 #if false
             int cnt = 0;

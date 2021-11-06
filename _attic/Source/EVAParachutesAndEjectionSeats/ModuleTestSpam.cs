@@ -24,18 +24,45 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-#if false
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
+/// <summary>
+/// Shows when which override of PartModule is called
+/// </summary>
 namespace VanguardTechnologies
 {
-    class ModuleKrImAFloat : PartModule
+    class ModuleKrTestSpam : PartModule
     {
-        [KSPField(guiActive = true, guiName = "This is me", isPersistant = false)]
-        float me = -1;
+        public override void OnActive()
+        {
+            Log.dbg("OnActive");
+        }
+        public override void OnAwake()
+        {
+            Log.dbg("OnAwake");
+        }
+        public override void OnInactive()
+        {
+            Log.dbg("OnInactive");
+        }
+        public override void OnLoad(ConfigNode node)
+        {
+            Log.dbg("OnLoad");
+        }
+        public override void OnFixedUpdate()
+        {
+            Log.dbg("OnFixedUpdate");
+        }
+        public override void OnUpdate()
+        {
+            Log.dbg("OnUpdate");
+        }
+        public override void OnSave(ConfigNode node)
+        {
+            Log.dbg("OnSave");
+        }
+        public override void OnStart(StartState state)
+        {
+            Log.dbg("OnStart: {0}", state);
+        }
     }
 }
-#endif

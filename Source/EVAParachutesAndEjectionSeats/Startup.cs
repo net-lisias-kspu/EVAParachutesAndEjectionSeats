@@ -1,4 +1,4 @@
-/*
+﻿/*
 	This file is part of EVA Parachutes & Ejection Seats /L Unleashed
 		© 2021 Lisias T : http://lisias.net <support@lisias.net>
 		© 2016-2021 LinxGuruGamer
@@ -24,32 +24,25 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-#if false
-// replaced with MM script
-namespace EVAParachutes
+using KSPe.Annotations;
+using UnityEngine;
+
+namespace VanguardTechnologies
 {
-    [KSPAddon(KSPAddon.Startup.MainMenu, true)]
-    public class initKerbalEVA : UnityEngine.MonoBehaviour
-    {
-        public void Awake()
-        {
-            ConfigNode EVA = new ConfigNode("MODULE");
-            EVA.AddValue("name", "ModuleKrKerbalParachute");
+	[KSPAddon (KSPAddon.Startup.Instantly, true)]
+	internal class Startup : MonoBehaviour
+	{
+		[UsedImplicitly]
+		private void Start ()
+		{
+			Log.force ("Version {0}", Version.Text);
 
-            try
-            {
-                PartLoader.getPartInfoByName("kerbalEVA").partPrefab.AddModule(EVA);
-            }
-            catch { }
-
-            EVA = new ConfigNode("MODULE");
-            EVA.AddValue("name", "ModuleKrKerbalParachute");
-            try
-            {
-                PartLoader.getPartInfoByName("kerbalEVAfemale").partPrefab.AddModule(EVA);
-            }
-            catch { }
-        }
-    }
+			try {
+				KSPe.Util.Installation.Check<Startup> ();
+			} catch (KSPe.Util.InstallmentException e) {
+				Log.error (e.ToShortMessage ());
+				KSPe.Common.Dialogs.ShowStopperAlertBox.Show (e);
+			}
+		}
+	}
 }
-#endif

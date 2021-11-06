@@ -1,130 +1,67 @@
-﻿using System;
+﻿/*
+	This file is part of EVA Parachutes & Ejection Seats /L Unleashed
+	© 2021 LisiasT : http://lisias.net <support@lisias.net>
+
+	THIS FILE is licensed to you under:
+
+	* WTFPL - http://www.wtfpl.net
+		* Everyone is permitted to copy and distribute verbatim or modified
+			copies of this license document, and changing it is allowed as long
+			as the name is changed.
+
+	THIS FILE is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+*/
 using System.Diagnostics;
-using UnityEngine;
+using KSPe.Util.Log;
 
 namespace VanguardTechnologies
 {
+	public static class Log
+	{
+		private static readonly Logger log = Logger.CreateForType<Startup> ();
 
-    public static class Log
-    {
-        public enum LEVEL
-        {
-            OFF = 0,
-            ERROR = 1,
-            WARNING = 2,
-            INFO = 3,
-            DETAIL = 4,
-            TRACE = 5
-        };
-        private static string TITLE = "VanguardTechnologies";
-        public static LEVEL level = LEVEL.INFO;
+		public static void force (string msg, params object [] @params)
+		{
+			log.force (msg, @params);
+		}
 
-        private static readonly String PREFIX = TITLE + ": ";
+		public static void info (string msg, params object [] @params)
+		{
+			log.info (msg, @params);
+		}
 
-        public static void SetTitle(string str)
-        {
-            TITLE = str;
-        }
+		public static void warn (string msg, params object [] @params)
+		{
+			log.warn (msg, @params);
+		}
 
-        public static LEVEL GetLevel()
-        {
-            return level;
-        }
+		public static void detail (string msg, params object [] @params)
+		{
+			log.detail (msg, @params);
+		}
 
-        [ConditionalAttribute("DEBUG")]
-        public static void SetLevel(LEVEL level)
-        {
-            UnityEngine.Debug.Log("log level " + level);
-            Log.level = level;
-        }
+		public static void trace (string msg, params object [] @params)
+		{
+			log.trace (msg, @params);
+		}
 
+		public static void error (string msg, params object [] @params)
+		{
+			log.error (msg, @params);
+		}
 
-        public static LEVEL GetLogLevel()
-        {
-            return level;
-        }
+		public static void ex (object offended, System.Exception e)
+		{
+			log.error(offended, e);
+		}
 
-
-        private static bool IsLevel(LEVEL level)
-        {
-            return level == Log.level;
-        }
-
-
-        public static bool IsLogable(LEVEL level)
-        {
-            return level <= Log.level;
-        }
-
-        [ConditionalAttribute("DEBUG")]
-        public static void Trace(String msg)
-        {
-            if (IsLogable(LEVEL.TRACE))
-            {
-                UnityEngine.Debug.Log(PREFIX + msg);
-                //			MonoBehaviour.print ("[" + name + ":" + level + ":" + id + "]  " + message);
-
-            }
-        }
-
-        [ConditionalAttribute("DEBUG")]
-        public static void Detail(String msg)
-        {
-            if (IsLogable(LEVEL.DETAIL))
-            {
-                UnityEngine.Debug.Log(PREFIX + msg);
-            }
-        }
-
-        [ConditionalAttribute("DEBUG")]
-        public static void Info(String msg)
-        {
-            if (IsLogable(LEVEL.INFO))
-            {
-                UnityEngine.Debug.Log(PREFIX + msg);
-            }
-        }
-
-        [ConditionalAttribute("DEBUG")]
-        public static void Test(String msg)
-        {
-            //if (IsLogable(LEVEL.INFO))
-            {
-                UnityEngine.Debug.LogWarning(PREFIX + "TEST:" + msg);
-            }
-        }
-
-        [ConditionalAttribute("DEBUG")]
-        public static void Debug(String msg)
-        {
-            //if (IsLogable(LEVEL.INFO))
-            {
-                UnityEngine.Debug.LogWarning(PREFIX + "DEBUG:" + msg);
-            }
-        }
-
-
-        public static void Warning(String msg)
-        {
-            if (IsLogable(LEVEL.WARNING))
-            {
-                UnityEngine.Debug.LogWarning(PREFIX + msg);
-            }
-        }
-
-        public static void Error(String msg)
-        {
-            if (IsLogable(LEVEL.ERROR))
-            {
-                UnityEngine.Debug.LogError(PREFIX + msg);
-            }
-        }
-
-        public static void Exception(Exception e)
-        {
-            Log.Error("exception caught: " + e.GetType() + ": " + e.Message);
-        }
-
-    }
-
+		[ConditionalAttribute ("DEBUG")]
+		public static void dbg (string msg, params object [] @params)
+		{
+			log.trace (msg, @params);
+		}
+	}
 }

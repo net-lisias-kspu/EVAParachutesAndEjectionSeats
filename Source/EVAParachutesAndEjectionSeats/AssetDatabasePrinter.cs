@@ -24,14 +24,10 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
+using GUI = KSPe.UI.GUI;
+using GUILayout = KSPe.UI.GUILayout;
 
-// This doesn't work now
-#if false
 namespace VanguardTechnologies
 {
     [KSPAddon(KSPAddon.Startup.Settings, false)]
@@ -83,4 +79,3 @@ namespace VanguardTechnologies
         }
     }
 }
-#endif

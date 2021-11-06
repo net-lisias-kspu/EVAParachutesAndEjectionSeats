@@ -1,9 +1,5 @@
 //This code was written by Frement, who allowed it to be freely used without any restrictions
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace FrementGUI

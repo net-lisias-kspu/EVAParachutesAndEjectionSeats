@@ -13,8 +13,6 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-#if false
-
 namespace VanguardTechnologies
 {
     public class Tosh_AutoStrut : PartModule
@@ -59,8 +57,8 @@ namespace VanguardTechnologies
                 if (AOwner != null)
                     ownerRigidbody = AOwner.GetComponent<Rigidbody>();
 
-                //            if (mAnchor && anchorRenderer)
-                //                anchorRenderer.enabled = false;
+                //if (mAnchor && anchorRenderer)
+                //    anchorRenderer.enabled = false;
                 if (mAnchor)
                 {
                     anchorRenderer = mAnchor.GetComponent<Renderer>();
@@ -665,4 +663,3 @@ namespace VanguardTechnologies
         }
     }
 }
-#endif

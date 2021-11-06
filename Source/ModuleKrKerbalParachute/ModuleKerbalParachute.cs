@@ -24,10 +24,6 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace VanguardTechnologies
@@ -64,7 +60,7 @@ namespace VanguardTechnologies
 
         public override void OnStart(PartModule.StartState state)
         {
-            Log.Info("ModuleKrKerbalParachute.OnStart, name:" + kerbalName);
+            Log.detail("ModuleKrKerbalParachute.OnStart, name: {0}", kerbalName);
             closedDrag = part.maximum_drag;
         }
 
@@ -76,10 +72,10 @@ namespace VanguardTechnologies
                 return;
             if (part.staticPressureAtm < minAirPressureToOpen)
             {
-                Log.Info("Air pressure too low for EVA parachute");
+                Log.warn("Air pressure too low for EVA parachute");
                 return;
             }
-            Log.Info("EVA parachute fully deployed");
+            Log.detail("EVA parachute fully deployed");
             CreateChuteModel();
             fullyDeployed = true;
             deployed = true;
@@ -98,10 +94,10 @@ namespace VanguardTechnologies
                 return;
             if (part.staticPressureAtm < minAirPressureToOpen)
             {
-                Log.Info("Air pressure too low for EVA parachute");
+                Log.warn("Air pressure too low for EVA parachute");
                 return;
             }
-            Log.Info("EVA parachute semi-deployed");
+            Log.detail("EVA parachute semi-deployed");
             CreateChuteModel();
             fullyDeployed = false;
             deployed = true;
@@ -112,7 +108,7 @@ namespace VanguardTechnologies
 
         public void DeployWhenAble(PartModule.StartState state, Vessel vessel, string k)
         {
-            Log.Info("DeployWhenAble set");
+            Log.detail("DeployWhenAble set");
             deployWhenAble = true;
             deployDelay = 2;
             origVessel = vessel;
@@ -123,12 +119,12 @@ namespace VanguardTechnologies
 
         private void CreateChuteModel()
         {
-            Log.Info("CreateChuteModel: " + chuteDir);
+            Log.detail("CreateChuteModel: {0}", chuteDir);
             time = (float)Planetarium.GetUniversalTime();
             if (!chute)
             {
-                Log.Info("CreateChuteModel, Found, name: " + this.vessel.name);
-                Log.Info("exists: " + GameDatabase.Instance.ExistsModel("VanguardTechnologies/Parts/" + chuteDir + "/model"));
+                Log.detail("CreateChuteModel, Found, name: {0}", this.vessel.name);
+                Log.detail("exists: {0}", GameDatabase.Instance.ExistsModel("VanguardTechnologies/Parts/" + chuteDir + "/model"));
                 chute = GameDatabase.Instance.GetModel("VanguardTechnologies/Parts/" + chuteDir + "/model");
                 chute.SetActive(true);
                 // this.rigidbody = GetComponent<Rigidbody>();
@@ -147,10 +143,10 @@ namespace VanguardTechnologies
             KerbalEVA kEVA = this.vessel.gameObject.GetComponentInChildren<KerbalEVA>();
             if (kEVA)
             {
-                Log.Info("KerbalEVA found");
+                Log.detail("KerbalEVA found");
                 if (kEVA.isRagdoll)
                 {
-                    Log.Info("Kerbal is ragdoll: " + this.vessel.name);
+                    Log.detail("Kerbal is ragdoll: {0}", this.vessel.name);
                     if (display)
                         ScreenMessages.PostScreenMessage("Kerbal " + this.vessel.name + " is unconcious, unable to deploy parachute", 3, ScreenMessageStyle.UPPER_CENTER);
                     return true;
@@ -172,7 +168,7 @@ namespace VanguardTechnologies
                 if (checkForRagdoll())
                     return;
  
-                Log.Info("EVA_Use & EVA_Jump");
+                Log.dbg("EVA_Use & EVA_Jump");
                 DeploySemi();  
             }
             if (!deployed) return;
@@ -187,12 +183,12 @@ namespace VanguardTechnologies
             if (vessel.srf_velocity.magnitude > 150)
                 return;
 
-            Log.Info("FixedUpdate, name: " + this.vessel.name +
-                "  deployWhenAble: " + deployWhenAble.ToString() + "  part.staticPressureAtm: " + part.staticPressureAtm.ToString() + "  minAirPressureToOpen" + minAirPressureToOpen.ToString());
+            Log.dbg("FixedUpdate, name: {0}  deployWhenAble: {1}  part.staticPressureAtm: {2}  minAirPressureToOpen {3}"
+                , this.vessel.name, deployWhenAble, part.staticPressureAtm, minAirPressureToOpen);
             if (!chute)
-                Log.Info("chute is null");
+                Log.dbg("chute is null");
             else
-                Log.Info("chute is good");
+                Log.dbg("chute is good");
             if (!chute)
             {
                 chuteState = part.staticPressureAtm < minAirPressureToOpen ? "Air pressure too low" : "Ready";
@@ -215,7 +211,8 @@ namespace VanguardTechnologies
            
             if (!fullyDeployed && chute != null)
             {
-                Log.Info("FixedUpdate.deployHeight: " + deployHeight.ToString() + "   vessel.heightFromTerrain: " + vessel.heightFromTerrain.ToString());
+                Log.dbg("FixedUpdate.deployHeight: {0}   vessel.heightFromTerrain: {1}"
+                    , deployHeight, vessel.heightFromTerrain);
                 if (vessel.altitude < deployHeight || (vessel.heightFromTerrain < deployHeight && vessel.heightFromTerrain != 1))
                     DeployFully();
                 else DeploySemi();
@@ -223,7 +220,8 @@ namespace VanguardTechnologies
             if (chute)
             {
                 float t = (float)((Planetarium.GetUniversalTime() - time) / (double)deployTime );
-                Log.Info("time: " + time.ToString() + "    Planetarium.GetUniversalTime(): " + Planetarium.GetUniversalTime().ToString() + "   deployTime: " + deployTime.ToString() + "     t: " + t.ToString());
+                Log.dbg("time: {0}    Planetarium.GetUniversalTime(): {1}   deployTime: {2}     t: {3}"
+                    , time, Planetarium.GetUniversalTime(), deployTime, t);
                 if (t < 1)
                     chute.transform.localScale = Vector3.Lerp(lastSize, targetSize, t);
                 else
@@ -231,7 +229,8 @@ namespace VanguardTechnologies
 
                 //chute.transform.localScale = new Vector3(0.55f, 0.55f, semiDeployedHeight); // test
                 
-                Log.Info("part.mass: " + part.mass.ToString() + "   part.physicsMass:  " + part.physicsMass.ToString());
+                Log.dbg("part.mass: {0}   part.physicsMass:  {1}"
+                    , part.mass, part.physicsMass);
                 part.maximum_drag = chute.transform.localScale.x * chute.transform.localScale.y * deployedDrag;
                 //                part.minimum_drag = part.maximum_drag;
 
@@ -254,12 +253,13 @@ namespace VanguardTechnologies
                     if (vessel.srf_velocity.magnitude < 5)
                         force -= 0.1f;
                 }
-                Log.Info("force: " + force.ToString() + "  FlightGlobals.ActiveVessel.mainBody.GeeASL: " + FlightGlobals.ActiveVessel.mainBody.GeeASL.ToString() + "  part.physicsMass: " + part.physicsMass.ToString() + "  chute.transform.localScale.x: " + chute.transform.localScale.x.ToString());
+                Log.dbg("force: {0}  FlightGlobals.ActiveVessel.mainBody.GeeASL: {1} part.physicsMass: {2}  chute.transform.localScale.x: {3}"
+                    , force, FlightGlobals.ActiveVessel.mainBody.GeeASL, part.physicsMass, chute.transform.localScale.x);
                 vessel.rootPart.Rigidbody.AddForce(skywardsDirection.normalized * force );
 
-                Log.Info("maximum_drag: " + part.maximum_drag.ToString() + "   deployedDrag: " + deployedDrag.ToString());
-                Log.Info("parasail: " + parasail.ToString());
-                Log.Info("skywardsDirection: " + skywardsDirection.normalized.ToString());
+                Log.dbg("maximum_drag: {0}   deployedDrag: {1}", part.maximum_drag, deployedDrag);
+                Log.dbg("parasail: {0}", parasail);
+                Log.dbg("skywardsDirection: {0}", skywardsDirection.normalized);
 #if true
                 // Vector3 velocity = vessel.rootPart.Rigidbody.velocity + Krakensbane.GetFrameVelocityV3f();
                 //Log.Info("velocity: " + velocity.ToString());
@@ -280,17 +280,17 @@ namespace VanguardTechnologies
                     //chute.transform.Rotate(0, 0, 0, Space.World);
 
                     Vector3 dragVector = vessel.transform.forward;
-                    Log.Info("dragVector: " + dragVector.ToString());
+                    Log.dbg("dragVector: {0}", dragVector);
                     Vector3 dragForce = deployedDrag * dragVector * semiDeployedFraction;
                     vessel.rootPart.Rigidbody.AddForceAtPosition(dragForce / 4, this.part.transform.position);
 
-                    Log.Info("x chute.transform.rotation : " + chute.transform.rotation.ToString());
-                    Log.Info("vessel.transform.rotation : " + vessel.transform.rotation.ToString());
-                    Log.Info("vessel.transform.rotation.x : " + vessel.transform.rotation.x.ToString());
+                    Log.dbg("x chute.transform.rotation : {0}", chute.transform.rotation);
+                    Log.dbg("vessel.transform.rotation : {0}", vessel.transform.rotation);
+                    Log.dbg("vessel.transform.rotation.x : {0}", vessel.transform.rotation.x);
                     //Quaternion tr = chute.transform.rotation;
                     //tr.y = chute.transform.rotation.y * 0.9f;
                     //chute.transform.rotation = tr;
-                    Log.Info("chute.transform.rotation.y : " + chute.transform.rotation.y.ToString());
+                    Log.dbg("chute.transform.rotation.y : {0}", chute.transform.rotation.y);
                     //chute.transform.RotateAround(chute.transform.position, chute.transform.up, 1);
                     //chute.transform.Rotate(0, 1, 0, Space.Self);
 
@@ -318,11 +318,11 @@ namespace VanguardTechnologies
 #endif
                 //var tt = vessel.transform.TransformDirection(Vector3.forward);
 
-                Log.Info("Vessel pointing: " + FlightGlobals.ship_heading.ToString());
-                Log.Info("vessel.srf_velocity: " + vessel.srf_velocity.ToString());
-                Log.Info("vessel.srf_velocity.x: " + vessel.srf_velocity.x.ToString());
-                Log.Info("vessel.srf_velocity.y: " + vessel.srf_velocity.y.ToString());
-                Log.Info("vessel.srf_velocity.z: " + vessel.srf_velocity.z.ToString());
+                Log.dbg("Vessel pointing: {0}", FlightGlobals.ship_heading);
+                Log.dbg("vessel.srf_velocity: {0}", vessel.srf_velocity);
+                Log.dbg("vessel.srf_velocity.x: {0}", vessel.srf_velocity.x);
+                Log.dbg("vessel.srf_velocity.y: {0}", vessel.srf_velocity.y);
+                Log.dbg("vessel.srf_velocity.z: {0}", vessel.srf_velocity.z);
 
 
                 if (parasail)
@@ -361,7 +361,7 @@ namespace VanguardTechnologies
                 if (vessel.srf_velocity.sqrMagnitude < 0.1 && waitBeforeCheckingSrvVel == 0)
                 {
                     part.maximum_drag = closedDrag;
-                    Log.Info("EVA parachute closed, vessel.srf_velocity.sqrMagnitude: " + vessel.srf_velocity.sqrMagnitude.ToString());
+                    Log.dbg("EVA parachute closed, vessel.srf_velocity.sqrMagnitude: {0}", vessel.srf_velocity.sqrMagnitude);
                     Destroy(chute);
                 }
 

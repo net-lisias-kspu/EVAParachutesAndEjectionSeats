@@ -24,12 +24,12 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
-#if false
+using GUI = KSPe.UI.GUI;
+using GUILayout = KSPe.UI.GUILayout;
+
 namespace VanguardTechnologies
 {
     //Makes me want to do a kerbal anime hair mod
@@ -160,4 +160,3 @@ namespace VanguardTechnologies
         }
     }
 }
-#endif

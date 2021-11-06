@@ -28,10 +28,7 @@
 */
 
 using UnityEngine;
-using System;
-using System.Collections.Generic;
 
-#if false
 namespace VanguardTechnologies
 {
     public class Tosh_ShaderReplacer : PartModule
@@ -56,21 +53,20 @@ namespace VanguardTechnologies
 
                 if (!t)
                     Debug.Log("shaderReplacer @" + part.name + ": cannot find object " + obj);
-                //else if (!t.renderer)
-                //Debug.Log("shaderReplacer @" + part.name + ": object " + obj + " has no renderer");
+                else if (!t.renderer)
+                    Debug.Log("shaderReplacer @" + part.name + ": object " + obj + " has no renderer");
                 else
                 {
                     Shader h = Shader.Find(shader);
                     if (!h)
                         Debug.Log("shaderReplacer @" + part.name + ": cannot find shader " + shader);
-                    //else
-                    //{
-                    //    Debug.Log("shaderReplacer @" + part.name + ": setting " + shader + " shader for " + obj);
-                    //    t.renderer.material.shader = h;
-                    //}
+                    else
+                    {
+                        Debug.Log("shaderReplacer @" + part.name + ": setting " + shader + " shader for " + obj);
+                        t.renderer.material.shader = h;
+                    }
                 }
             }
         }
     }
 }
-#endif
