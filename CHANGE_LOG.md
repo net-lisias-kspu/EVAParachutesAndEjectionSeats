@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2018-1103: 0.1.15.4 (LinuxGuruGamer) for KSP 1.5.1
+	+ Removed code which inserted module at runtime and replaced with MM script,  This also fixed the mod for the kerbals in the expansion pack
 * 2018-1023: 0.1.15.3 (LinuxGuruGamer) for KSP 1.5.1
 	+ Version bump for 1.5 rebuild
 * 2018-0330: 0.1.15.2 (LinuxGuruGamer) for KSP 1.4.1
