@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2017-0111: 0.1.12 (LinuxGuruGamer) for KSP 1.2.2
+	+ Added code to check for unconcious kerbal.  If a kerbl was EVA and then knocked unconcious, the parachute will NOT deploy, and a message will be displayed
 * 2017-0111: 0.1.11 (LinuxGuruGamer) for KSP 1.2.2
 	+ Fixed problem with the Space+F key (Use + jump) not deploying parachute (0.1.5 fix got reverted somehow)
 	+ Added AssemblyVersion code
