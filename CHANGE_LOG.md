@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2016-1102: 0.1.10.1 (LinuxGuruGamer) for KSP 1.2.2
+	+ Updated version file
 * 2016-1101: 0.1.10 (LinuxGuruGamer) for KSP 1.2
 	+ fixed mass calculation for when MM patch is being used instead of the
 		- ejector part
