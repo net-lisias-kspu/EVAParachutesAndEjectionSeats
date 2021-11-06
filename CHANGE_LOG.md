@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2016-0923: 0.1.0.4 (LinuxGuruGamer) for KSP 1.2
+	+ No changelog provided
 * 2016-0923: 0.1.0.3 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
 	+ No changelog provided
 * 2016-0922: 0.1.0.2 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
