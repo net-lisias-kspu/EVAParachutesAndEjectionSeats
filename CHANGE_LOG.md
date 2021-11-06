@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2019-1027: 0.2.0.1 (LinuxGuruGamer) for KSP 1.8.0
+	+ Updated MiniAVC.dll to 1.4.0.2 to fix a nasty CTD
 * 2019-1026: 0.2.0 (LinuxGuruGamer) for KSP 1.8.0
 	+ Updated for KSP 1.8
 	+ Added InstallChecker
