@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2016-1014: 0.1.6 (LinuxGuruGamer) for KSP 1.2
+	+ No changelog provided
 * 2016-1002: 0.1.5 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
 	+ Fixed manual trigger of chutes on eva
 * 2016-1002: 0.1.4 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
