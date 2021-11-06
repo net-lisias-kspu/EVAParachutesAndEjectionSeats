@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2016-0929: 0.1.3 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
+	+ Fixed issue where a single ejected kerbal would have force applied continously
 * 2016-0928: 0.1.2.1 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
 	+ Recompiled for 1540
 * 2016-0925: 0.1.2 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
