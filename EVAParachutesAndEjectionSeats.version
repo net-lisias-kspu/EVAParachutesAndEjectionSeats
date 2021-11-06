@@ -1,0 +1,18 @@
+{
+	"NAME"		: "EVA Parachutes And Ejection Seats /L Unleashed",
+	"URL"		: "https://raw.githubusercontent.com/net-lisias-kspu/EVAParachutesAndEjectionSeats/master/EVAParachutesAndEjectionSeats.version",
+	"DOWNLOAD"	: "https://github.com/net-lisias-kspu/EVAParachutesAndEjectionSeats/releases",
+	"CHANGE_LOG"	: "https://raw.githubusercontent.com/net-lisias-kspu/EVAParachutesAndEjectionSeats/master/CHANGE_LOG.md",
+	"CHANGE_LOG_URL": "https://raw.githubusercontent.com/net-lisias-kspu/EVAParachutesAndEjectionSeats/master/CHANGES.md",
+	"VERSION":{
+		"MAJOR":0,
+		"MINOR":1,
+		"PATCH":15,
+		"BUILD":4
+		},
+	"KSP_VERSION_MIN":{
+		"MAJOR":1,
+		"MINOR":3,
+		"PATCH":1
+		}
+}
