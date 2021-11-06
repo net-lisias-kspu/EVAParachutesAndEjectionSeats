@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2019-0705: 0.1.17 (LinuxGuruGamer) for KSP 1.7.2
+	+ Version bump for 1.7.2
 * 2019-0120: 0.1.16 (LinuxGuruGamer) for KSP 1.6.1
 	+ Added missing bulkheadProfiles
 * 2019-0109: 0.1.15.5 (LinuxGuruGamer) for KSP 1.6.0
