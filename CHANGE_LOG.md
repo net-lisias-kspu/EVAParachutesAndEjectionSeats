@@ -1,5 +1,8 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2017-0111: 0.1.11 (LinuxGuruGamer) for KSP 1.2.2
+	+ Fixed problem with the Space+F key (Use + jump) not deploying parachute (0.1.5 fix got reverted somehow)
+	+ Added AssemblyVersion code
 * 2016-1102: 0.1.10.1 (LinuxGuruGamer) for KSP 1.2.2
 	+ Updated version file
 * 2016-1101: 0.1.10 (LinuxGuruGamer) for KSP 1.2
