@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2016-0925: 0.1.2 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
+	+ Added multiple parachutes
 * 2016-0923: 0.1.1 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
 	+ Added an ejection sound
 * 2016-0923: 0.1.0.4 (LinuxGuruGamer) for KSP 1.2
