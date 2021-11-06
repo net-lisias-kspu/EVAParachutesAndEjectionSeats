@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2016-1030: 0.1.9 (LinuxGuruGamer) for KSP 1.2
+	+ Added optional patch to add ejection module to all command pods
 * 2016-1030: 0.1.8 (LinuxGuruGamer) for KSP 1.2
 	+ Fixed release script to use release code rather than debug code
 * 2016-1025: 0.1.7 (LinuxGuruGamer) for KSP 1.2
