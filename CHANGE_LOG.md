@@ -1,5 +1,7 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2017-0530: 0.1.14 (LinuxGuruGamer) for KSP 1.3.0
+	+ Updated for 1.3
 * 2017-0414: 0.1.13 (LinuxGuruGamer) for KSP 1.2.2
 	+ Added deployHeight configurable value
 	+ Added MM patch for FAR, to set the deployHeight to 700
