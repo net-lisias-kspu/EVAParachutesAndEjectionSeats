@@ -3,16 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVAParachutesAndEjectionSeats", "EVAParachutesAndEjectionSeats\EVAParachutesAndEjectionSeats.csproj", "{EC925528-7C6F-4B72-BD2C-73B1B8627421}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVAParachutesAndEjectionSeats", "Source\EVAParachutesAndEjectionSeats\EVAParachutesAndEjectionSeats.csproj", "{EC925528-7C6F-4B72-BD2C-73B1B8627421}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{E26FE0F1-A424-4B28-8F68-A8DD28BA1ACC}"
 	ProjectSection(SolutionItems) = preProject
-		buildRelease.bat = buildRelease.bat
-		Changelog.txt = Changelog.txt
-		deploy.bat = deploy.bat
-		EVAParachutesAndEjectionSeats.version = EVAParachutesAndEjectionSeats.version
-		jenkins.txt = jenkins.txt
-		License.txt = License.txt
 		README.md = README.md
 	EndProjectSection
 EndProject
