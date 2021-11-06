@@ -1,5 +1,9 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2019-1026: 0.2.0 (LinuxGuruGamer) for KSP 1.8.0
+	+ Updated for KSP 1.8
+	+ Added InstallChecker
+	+ Deleted old unused code files
 * 2019-0705: 0.1.17 (LinuxGuruGamer) for KSP 1.7.2
 	+ Version bump for 1.7.2
 * 2019-0120: 0.1.16 (LinuxGuruGamer) for KSP 1.6.1
