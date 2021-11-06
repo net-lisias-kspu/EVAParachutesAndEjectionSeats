@@ -24,18 +24,13 @@
 	If not, see <https://www.gnu.org/licenses/>.
 
 */
-#if false
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace VanguardTechnologies
 {
-    class ModuleKrImAFloat : PartModule
-    {
-        [KSPField(guiActive = true, guiName = "This is me", isPersistant = false)]
-        float me = -1;
-    }
+	public static class LegalMamboJambo
+	{
+		public const string Company = "/L Aerospace KSP Division";
+		public const string Copyright = "© 2021 LisiasT";
+		public const string Product = "VanguardTechnologies";
+		public const string Trademark = "Vanguard Technologies™ by Kreuzung; EVAParachutesAndEjectionSeats™ by LinxGuruGamer; /L Unleashed™ by LisiasT";
+	}
 }
-#endif

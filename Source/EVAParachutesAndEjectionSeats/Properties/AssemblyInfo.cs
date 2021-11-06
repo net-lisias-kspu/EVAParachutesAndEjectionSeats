@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("VanguardTechnologies")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Provides parachutes for all Kerbals on EVA, as well ejection modules, to be able to eject all Kerbals from a craft in an Abort sequence.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("VanguardTechnologies")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany(VanguardTechnologies.LegalMamboJambo.Company)]
+[assembly: AssemblyProduct(VanguardTechnologies.LegalMamboJambo.Product)]
+[assembly: AssemblyCopyright(VanguardTechnologies.LegalMamboJambo.Copyright)]
+[assembly: AssemblyTrademark(VanguardTechnologies.LegalMamboJambo.Trademark)]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -33,4 +33,6 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 //[assembly: AssemblyVersion("1.0.0.7")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(VanguardTechnologies.Version.Number)]
+[assembly: AssemblyFileVersion(VanguardTechnologies.Version.Number)]
+[assembly: KSPAssembly("EVAParachutesAndEjectionSeats", VanguardTechnologies.Version.major, VanguardTechnologies.Version.minor)]
