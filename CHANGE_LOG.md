@@ -1,5 +1,9 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2021-0723: 0.2.0.3 (LinuxGuruGamer) for KSP 1.12.1
+	+ Renamed DLL for CKAN compatibility
+	+ Added AssemblyFileVersion
+	+ Updated version file for 1.12
 * 2019-1027: 0.2.0.2 (LinuxGuruGamer) for KSP 1.9.0
 	+ Really did the MiniAVC update
 * 2019-1027: 0.2.0.1 (LinuxGuruGamer) for KSP 1.8.0
