@@ -1,5 +1,9 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
 
+* 2017-0414: 0.1.13 (LinuxGuruGamer) for KSP 1.2.2
+	+ Added deployHeight configurable value
+	+ Added MM patch for FAR, to set the deployHeight to 700
+	+ Fixed issue with chute animation when very far in the future
 * 2017-0111: 0.1.12 (LinuxGuruGamer) for KSP 1.2.2
 	+ Added code to check for unconcious kerbal.  If a kerbl was EVA and then knocked unconcious, the parachute will NOT deploy, and a message will be displayed
 * 2017-0111: 0.1.11 (LinuxGuruGamer) for KSP 1.2.2
