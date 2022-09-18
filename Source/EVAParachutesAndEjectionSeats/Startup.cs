@@ -38,7 +38,7 @@ namespace VanguardTechnologies
 			Log.force ("Version {0}", Version.Text);
 
 			try {
-				KSPe.Util.Installation.Check<Startup> ();
+				KSPe.Util.Installation.Check<Startup>();
 			} catch (KSPe.Util.InstallmentException e) {
 				Log.error (e.ToShortMessage ());
 				KSPe.Common.Dialogs.ShowStopperAlertBox.Show (e);
