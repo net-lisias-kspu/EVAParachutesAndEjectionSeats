@@ -1,1 +1,89 @@
 # EVA Parachutes & Ejection Seats /L Unleashed :: Change Log
+
+* 2022-0918: 0.3.0.0 (LisiasT) for KSP >= 1.2
+	+ Adds KSPe facilities
+	+ Fixes `ModuleKrKerbalParachute` settings and patchings to prevent crashing KSP <= 1.3.1 on loading
+	+ Supports all Kerbal Suits up to 1.12.3
+		- Why someone would use this on 1.12 is another history! :) 
+	+ Make the thing work from KSP 1.2 to the latest! **#HURRAY!**
+* 2021-0723: 0.2.0.3 (LinuxGuruGamer) for KSP 1.12.1
+	+ Renamed DLL for CKAN compatibility
+	+ Added AssemblyFileVersion
+	+ Updated version file for 1.12
+* 2019-1027: 0.2.0.2 (LinuxGuruGamer) for KSP 1.9.0
+	+ Really did the MiniAVC update
+* 2019-1027: 0.2.0.1 (LinuxGuruGamer) for KSP 1.8.0
+	+ Updated MiniAVC.dll to 1.4.0.2 to fix a nasty CTD
+* 2019-1026: 0.2.0 (LinuxGuruGamer) for KSP 1.8.0
+	+ Updated for KSP 1.8
+	+ Added InstallChecker
+	+ Deleted old unused code files
+* 2019-0705: 0.1.17 (LinuxGuruGamer) for KSP 1.7.2
+	+ Version bump for 1.7.2
+* 2019-0120: 0.1.16 (LinuxGuruGamer) for KSP 1.6.1
+	+ Added missing bulkheadProfiles
+* 2019-0109: 0.1.15.5 (LinuxGuruGamer) for KSP 1.6.0
+* 2018-1103: 0.1.15.4 (LinuxGuruGamer) for KSP 1.5.1
+	+ Removed code which inserted module at runtime and replaced with MM script,  This also fixed the mod for the kerbals in the expansion pack
+* 2018-1023: 0.1.15.3 (LinuxGuruGamer) for KSP 1.5.1
+	+ Version bump for 1.5 rebuild
+* 2018-0330: 0.1.15.2 (LinuxGuruGamer) for KSP 1.4.1
+	+ Fixed version file
+* 2018-0330: 0.1.15.1 (LinuxGuruGamer) for KSP 1.4.1
+	+ Updated for 1.4.1
+	+ Added Jenkins config
+	+ Reorganized directories
+* 2017-1009: 0.1.15 (LinuxGuruGamer) for KSP 1.3.1
+	+ Updated for KSP 1.3.1
+* 2017-0530: 0.1.14 (LinuxGuruGamer) for KSP 1.3.0
+	+ Updated for 1.3
+* 2017-0414: 0.1.13 (LinuxGuruGamer) for KSP 1.2.2
+	+ Added deployHeight configurable value
+	+ Added MM patch for FAR, to set the deployHeight to 700
+	+ Fixed issue with chute animation when very far in the future
+* 2017-0111: 0.1.12 (LinuxGuruGamer) for KSP 1.2.2
+	+ Added code to check for unconcious kerbal.  If a kerbl was EVA and then knocked unconcious, the parachute will NOT deploy, and a message will be displayed
+* 2017-0111: 0.1.11 (LinuxGuruGamer) for KSP 1.2.2
+	+ Fixed problem with the Space+F key (Use + jump) not deploying parachute (0.1.5 fix got reverted somehow)
+	+ Added AssemblyVersion code
+* 2016-1102: 0.1.10.1 (LinuxGuruGamer) for KSP 1.2.2
+	+ Updated version file
+* 2016-1101: 0.1.10 (LinuxGuruGamer) for KSP 1.2
+	+ fixed mass calculation for when MM patch is being used instead of the
+		- ejector part
+* 2016-1030: 0.1.9 (LinuxGuruGamer) for KSP 1.2
+	+ Added optional patch to add ejection module to all command pods
+* 2016-1030: 0.1.8 (LinuxGuruGamer) for KSP 1.2
+	+ Fixed release script to use release code rather than debug code
+* 2016-1025: 0.1.7 (LinuxGuruGamer) for KSP 1.2
+	+ Fixes log spam
+* 2016-1014: 0.1.6 (LinuxGuruGamer) for KSP 1.2
+	+ No changelog provided
+* 2016-1002: 0.1.5 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
+	+ Fixed manual trigger of chutes on eva
+* 2016-1002: 0.1.4 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
+	+ New parachute models contributed by SpannerMonkey
+* 2016-1001: 0.1.3.1 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
+	+ No changelog provided
+* 2016-0929: 0.1.3 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
+	+ Fixed issue where a single ejected kerbal would have force applied continously
+* 2016-0928: 0.1.2.1 (LinuxGuruGamer) for KSP 1540 PRE-RELEASE
+	+ Recompiled for 1540
+* 2016-0925: 0.1.2 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
+	+ Added multiple parachutes
+* 2016-0923: 0.1.1 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
+	+ Added an ejection sound
+* 2016-0923: 0.1.0.4 (LinuxGuruGamer) for KSP 1.2
+	+ No changelog provided
+* 2016-0923: 0.1.0.3 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
+	+ No changelog provided
+* 2016-0922: 0.1.0.2 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
+	+ No changelog provided
+* 2016-0922: 0.1.0.1 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
+	+ No changelog provided
+* 2016-0922: 0.1.0 (LinuxGuruGamer) for KSP 1.2 PRE-RELEASE
+	+ This is a BETA, directory layout & names may change
+	+ Always delete the old install of the mod before installing the new one
+* 2016-0529 : 0.7.2 (Kreuzung) for KSP 1.2 (Date estimated)
+	+ VNG Plugin
+	+ No further info available  
