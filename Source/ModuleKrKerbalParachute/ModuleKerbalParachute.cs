@@ -32,11 +32,24 @@ namespace VanguardTechnologies
     //    public class ModuleKrKerbalParachute : ModuleParachute
     {
         [KSPField(isPersistant = true)]
-        public float deployedDrag = 100, closedDrag, minAirPressureToOpen = 0.01f, semiDeployedFraction = .25f, semiDeployedHeight = 1.25f, deployTime = .33f;
+        public float deployedDrag = 100;
+
+        [KSPField(isPersistant = true)]
+        public float minAirPressureToOpen = 0.01f;
+
+        [KSPField(isPersistant = true)]
+        public float semiDeployedFraction = .25f;
+
+        [KSPField(isPersistant = true)]
+        public float semiDeployedHeight = 1.25f;
+
+        [KSPField(isPersistant = true)]
+        public float deployTime = .33f;
 
         [KSPField(isPersistant = true)]
         public int deployHeight = 200;
 
+        public float closedDrag = 0;
         public bool fullyDeployed = false;
         public bool deployed = false;
         private GameObject chute;
