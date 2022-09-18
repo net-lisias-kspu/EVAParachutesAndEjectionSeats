@@ -16,3 +16,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion(VanguardTechnologies.Version.Number)]
 [assembly: AssemblyFileVersion(VanguardTechnologies.Version.Number)]
 [assembly: KSPAssembly("VanguardTechnologies.ModuleKrKerbalParachute", VanguardTechnologies.Version.major, VanguardTechnologies.Version.minor)]
+
+[assembly: KSPAssemblyDependency("KSPe", 2, 4)]
+[assembly: KSPAssemblyDependency("KSPe.UI", 2, 4)]
