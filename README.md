@@ -60,9 +60,8 @@ To install, place the GameData folder inside your Kerbal Space Program folder.
 
 ### Licensing
 
-
 * EVA Parachutes & Ejection Seats /L Unleashed is double licensed as follows:
-	+ [SKL 1.0](https://ksp.lisias.net/SKL-1_0.txt). See [here](./LICENSE.KSPe.SKL-1_0)
+	+ [SKL 1.0](https://ksp.lisias.net/SKL-1_0.txt). See [here](./LICENSE.SKL-1_0)
 		+ You are free to:
 			- Use : unpack and use the material in any computer or device
 			- Redistribute : redistribute the original package in any medium
@@ -71,7 +70,7 @@ To install, place the GameData folder inside your Kerbal Space Program folder.
 			- You don't alter the package in any form or way (but you can embedded it)
 			- You don't change the material in any way, and retain any copyright notices
 			- You must explicitly state the author's Copyright, as well an Official Site for downloading the original and new versions (the one you used to download is good enough)
-	+ [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.txt). See [here](./LICENSE.KSPe.GPL-2_0)
+	+ [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.txt). See [here](./LICENSE.GPL-2_0)
 		+ You are free to:
 			- Use : unpack and use the material in any computer or device
 			- Redistribute : redistribute the original package in any medium

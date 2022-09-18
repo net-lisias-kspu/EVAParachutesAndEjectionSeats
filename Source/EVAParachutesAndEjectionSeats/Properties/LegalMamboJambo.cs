@@ -1,6 +1,6 @@
 ﻿/*
 	This file is part of EVA Parachutes & Ejection Seats /L Unleashed
-		© 2021 Lisias T : http://lisias.net <support@lisias.net>
+		© 2021-2022 Lisias T : http://lisias.net <support@lisias.net>
 		© 2016-2021 LinxGuruGamer
 		© 2013-2015 Kreuzung
 
@@ -29,7 +29,7 @@ namespace VanguardTechnologies
 	public static class LegalMamboJambo
 	{
 		public const string Company = "/L Aerospace KSP Division";
-		public const string Copyright = "© 2021 LisiasT";
+		public const string Copyright = "© 2021-2022 LisiasT";
 		public const string Product = "VanguardTechnologies";
 		public const string Trademark = "Vanguard Technologies™ by Kreuzung; EVAParachutesAndEjectionSeats™ by LinxGuruGamer; /L Unleashed™ by LisiasT";
 	}

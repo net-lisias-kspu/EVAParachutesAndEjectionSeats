@@ -1,6 +1,6 @@
 ﻿/*
 	This file is part of EVA Parachutes & Ejection Seats /L Unleashed
-	© 2021 LisiasT : http://lisias.net <support@lisias.net>
+	© 2021-2022 LisiasT : http://lisias.net <support@lisias.net>
 
 	THIS FILE is licensed to you under:
 
